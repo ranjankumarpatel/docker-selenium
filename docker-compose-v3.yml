@@ -25,6 +25,39 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=false
 
+  edge1:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=false
+      
+  edge2:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=false
+      
+  edge3:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=false
+      
   firefox:
     image: selenium/node-firefox:4.1.3-20220327
     shm_size: 2gb

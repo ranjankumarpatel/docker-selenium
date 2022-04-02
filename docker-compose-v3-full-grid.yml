@@ -22,7 +22,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   selenium-session-queue:
     image: selenium/session-queue:4.1.3-20220327
@@ -35,7 +35,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   selenium-distributor:
     image: selenium/distributor:4.1.3-20220327
@@ -54,7 +54,7 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
-      - START_XVFB=false
+      - START_XVFB=true
 
   selenium-router:
     image: selenium/router:4.1.3-20220327
@@ -72,7 +72,7 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
-      - START_XVFB=false
+      - START_XVFB=true
 
   chrome:
     image: selenium/node-chrome:4.1.3-20220327
@@ -83,7 +83,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   chrome2:
     image: selenium/node-chrome:4.1.3-20220327
@@ -94,7 +94,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
   chrome3:
     image: selenium/node-chrome:4.1.3-20220327
     shm_size: 2gb
@@ -104,7 +104,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   chrome4:
     image: selenium/node-chrome:4.1.3-20220327
@@ -115,7 +115,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   chrome5:
     image: selenium/node-chrome:4.1.3-20220327
@@ -126,7 +126,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   chrome6:
     image: selenium/node-chrome:4.1.3-20220327
@@ -137,7 +137,51 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
+
+  chrome7:
+    image: selenium/node-chrome:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+        
+  chrome8:
+    image: selenium/node-chrome:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+        
+  chrome9:
+    image: selenium/node-chrome:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+        
+  chrome10:
+    image: selenium/node-chrome:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
 
   edge:
     image: selenium/node-edge:4.1.3-20220327
@@ -148,7 +192,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   edge1:
     image: selenium/node-edge:4.1.3-20220327
@@ -159,7 +203,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   edge2:
     image: selenium/node-edge:4.1.3-20220327
@@ -170,7 +214,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   edge3:
     image: selenium/node-edge:4.1.3-20220327
@@ -181,7 +225,18 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
+
+  edge4:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
 
   edge5:
     image: selenium/node-edge:4.1.3-20220327
@@ -192,7 +247,62 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
+
+  edge6:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+
+  edge7:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+
+  edge8:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+
+  edge9:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
+
+  edge10:
+    image: selenium/node-edge:4.1.3-20220327
+    shm_size: 2gb
+    depends_on:
+      - selenium-event-bus
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-event-bus
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - START_XVFB=true
 
   firefox:
     image: selenium/node-firefox:4.1.3-20220327
@@ -203,7 +313,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
   firefox1:
     image: selenium/node-firefox:4.1.3-20220327
     shm_size: 2gb
@@ -213,7 +323,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   firefox2:
     image: selenium/node-firefox:4.1.3-20220327
@@ -224,7 +334,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   firefox3:
     image: selenium/node-firefox:4.1.3-20220327
@@ -235,7 +345,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   firefox4:
     image: selenium/node-firefox:4.1.3-20220327
@@ -246,7 +356,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true
 
   firefox5:
     image: selenium/node-firefox:4.1.3-20220327
@@ -257,4 +367,4 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - START_XVFB=false
+      - START_XVFB=true

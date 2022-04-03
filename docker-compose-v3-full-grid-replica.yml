@@ -23,6 +23,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
   selenium-session-queue:
     image: selenium/session-queue:4.1.3-20220327
@@ -36,6 +37,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
   selenium-distributor:
     image: selenium/distributor:4.1.3-20220327
@@ -54,7 +56,8 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
-      - START_XVFB=true
+      - START_XVFB=
+      - VNC_NO_PASSWORD=1
 
   selenium-router:
     image: selenium/router:4.1.3-20220327
@@ -73,6 +76,7 @@ services:
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
   chrome:
     image: selenium/node-chrome:4.1.3-20220327
@@ -85,6 +89,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
   edge:
     image: selenium/node-edge:4.1.3-20220327
@@ -97,6 +102,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
   firefox:
     image: selenium/node-firefox:4.1.3-20220327
@@ -109,4 +115,5 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - START_XVFB=true
+      - VNC_NO_PASSWORD=1
 
